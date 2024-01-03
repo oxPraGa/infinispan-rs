@@ -4,9 +4,9 @@ mod helpers;
 mod caches {
     use crate::helpers::*;
     use http::StatusCode;
-    use infinispan::request::caches::modes::*;
-    use infinispan::request::caches::Cache;
-    use infinispan::request::{caches, entries};
+    use infinispan_fork::request::caches::modes::*;
+    use infinispan_fork::request::caches::Cache;
+    use infinispan_fork::request::{caches, entries};
     use reqwest::Response;
     use serde_json::Value;
     use serial_test::serial;

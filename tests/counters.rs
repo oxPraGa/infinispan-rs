@@ -7,7 +7,7 @@ mod helpers;
 mod counters {
     use crate::helpers::*;
     use http::StatusCode;
-    use infinispan::request::counters;
+    use infinispan_fork::request::counters;
     use reqwest::Response;
     use serde_json::Value;
     use serial_test::serial;

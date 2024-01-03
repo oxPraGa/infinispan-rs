@@ -1,14 +1,15 @@
 [package]
 edition = "2021"
-name = "infinispan"
-version = "0.3.0"
-description = "Rust client for the Infinispan REST API"
+name = "infinispan-fork"
+version = "0.1.0"
+description = "Rust client for the Infinispan REST API with DIGEST auth for version > 12.0.x"
 license = "Apache-2.0"
 authors = [
     "David Ortiz <z.david.ortiz@gmail.com>",
     "Alejandro Martinez Ruiz <alex@flawedcode.org>",
+    "Houssem eddine aliouche (aliouche.houssem2@gmail.com)",
 ]
-repository = "https://github.com/kuadrant/infinispan-rs"
+repository = "https://github.com/oxPraGa/infinispan-rs"
 readme = "README.md"
 keywords = ["client", "api", "infinispan", "jboss", "datagrid"]
 categories = ["api-bindings"]
@@ -16,6 +17,7 @@ categories = ["api-bindings"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+diqwest = "2.0.0"
 reqwest = "0.11"
 http = "0.2"
 base64 = "0.13"

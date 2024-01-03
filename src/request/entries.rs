@@ -55,9 +55,8 @@ impl ToHttpRequest for CreateEntryReq {
     fn to_http_req(
         &self,
         base_url: impl AsRef<str>,
-        basic_auth_encoded: impl AsRef<str>,
     ) -> http::Request<String> {
-        Request::from(self).to_http_req(base_url, basic_auth_encoded)
+        Request::from(self).to_http_req(base_url)
     }
 }
 

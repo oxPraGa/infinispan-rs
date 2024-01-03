@@ -1,5 +1,5 @@
-use infinispan::request::ToHttpRequest;
-use infinispan::Infinispan;
+use infinispan_fork::request::ToHttpRequest;
+use infinispan_fork::Infinispan;
 use reqwest::Response;
 
 pub fn infinispan_client() -> Infinispan {

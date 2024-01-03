@@ -1,10 +1,6 @@
-# infinispan-rs
+# infinispan-rs-fork
 
-![Github
-Workflow](https://github.com/kuadrant/infinispan-rs/workflows/Infinispan-rs/badge.svg)
-[![docs.rs](https://docs.rs/infinispan/badge.svg)](https://docs.rs/infinispan)
-[![Crates.io](https://img.shields.io/crates/v/infinispan)](https://crates.io/crates/infinispan)
-
+A fork of [`infinispan-rs`](https://github.com/Kuadrant/infinispan-rs) with DIGEST auth for version > 12.0.x
 infinispan-rs is a Rust client for the [Infinispan REST
 API](https://infinispan.org/docs/stable/titles/rest/rest.html). For now, it
 implements a small part of the API.
@@ -20,6 +16,7 @@ implements a small part of the API.
 ## Install
 
 Add the `infinispan` dependency to your `Cargo.toml`:
+
 ```toml
 [dependencies]
 infinispan = "0.3"
@@ -65,8 +62,9 @@ cargo build
 
 Some tests need Infinispan running in `localhost:11222`. You can run it in
 Docker with:
+
 ```bash
-docker run -it -p 11222:11222 -e USER="username" -e PASS="password"  infinispan/server:11.0.9.Final
+docker run -it -p 11222:11222 -e USER="username" -e PASS="password"  infinispan/server:12.0.0.Final
 ```
 
 Then, run the tests:

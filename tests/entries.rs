@@ -4,8 +4,8 @@ mod helpers;
 mod entries {
     use crate::helpers::{read_body, run};
     use http::StatusCode;
-    use infinispan::request::caches;
-    use infinispan::request::entries;
+    use infinispan_fork::request::caches;
+    use infinispan_fork::request::entries;
     use serial_test::serial;
 
     const TEST_CACHE_NAME: &str = "test_cache";

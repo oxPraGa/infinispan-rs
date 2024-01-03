@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use http::header::{AUTHORIZATION, CONTENT_TYPE};
+use http::header::CONTENT_TYPE;
 use http::Request as HttpRequest;
 
 pub mod caches;
@@ -39,11 +39,7 @@ pub struct Request {
 }
 
 pub trait ToHttpRequest {
-    fn to_http_req(
-        &self,
-        base_url: impl AsRef<str>,
-        basic_auth_encoded: impl AsRef<str>,
-    ) -> HttpRequest<String>;
+    fn to_http_req(&self, base_url: impl AsRef<str>) -> HttpRequest<String>;
 }
 
 impl Request {
@@ -63,19 +59,14 @@ impl Request {
 }
 
 impl ToHttpRequest for Request {
-    fn to_http_req(
-        &self,
-        base_url: impl AsRef<str>,
-        basic_auth_encoded: impl AsRef<str>,
-    ) -> HttpRequest<String> {
+    fn to_http_req(&self, base_url: impl AsRef<str>) -> HttpRequest<String> {
         let mut http_req = HttpRequest::builder()
             .method(self.method.as_str())
             .uri(format!("{}{}", base_url.as_ref(), self.path_and_query));
 
-        http_req = http_req
-            .header(CONTENT_TYPE, "application/json")
-            .header(AUTHORIZATION, basic_auth_encoded.as_ref());
+        http_req = http_req.header(CONTENT_TYPE, "application/json");
 
+        println!("{:?}", self.headers);
         for (header_name, header_val) in &self.headers {
             http_req = http_req.header(header_name.as_str(), header_val);
         }
