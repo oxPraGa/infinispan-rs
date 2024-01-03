@@ -1,6 +1,7 @@
 # infinispan-rs-fork
 
-A fork of [`infinispan-rs`](https://github.com/Kuadrant/infinispan-rs) with DIGEST auth for version > 12.0.x
+A fork of [`infinispan-rs`](https://github.com/Kuadrant/infinispan-rs) with DIGEST auth for version > 12.0.x .
+
 infinispan-rs is a Rust client for the [Infinispan REST
 API](https://infinispan.org/docs/stable/titles/rest/rest.html). For now, it
 implements a small part of the API.
@@ -19,14 +20,14 @@ Add the `infinispan` dependency to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-infinispan = "0.3"
+infinispan-fork = "0.1"
 ```
 
 ## Usage
 
 ```rust
-use infinispan::Infinispan;
-use infinispan::request;
+use infinispan_fork::Infinispan;
+use infinispan_fork::request;
 
 // Create a client
 let client = Infinispan::new("http://localhost:11222", "username", "password");
